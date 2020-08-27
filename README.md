@@ -2,7 +2,7 @@
 A shell script to generate custom model data JSON files for minecraft. It supports all custom item models as of 1.16, including bows, crossbows, clocks, and compasses.
 
 ## Dependencies
-* Bash Shell (If using Windows, consider installing [Linux Bash Shell](https://itsfoss.com/install-bash-on-windows/))
+* Bash Shell
   * If using Windows, consider installing [Linux Bash Shell](https://itsfoss.com/install-bash-on-windows/)
   * If using MacOS, ensure you are using the latest Bash Shell [Upgrading Bash on MacOS](https://itnext.io/upgrading-bash-on-macos-7138bd1066ba)
 
