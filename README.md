@@ -5,7 +5,7 @@ A shell script to generate custom model data JSON files for minecraft. It suppor
 * Bash Shell
   * If using Windows, consider installing [Linux Bash Shell](https://itsfoss.com/install-bash-on-windows/)
   * If using MacOS, ensure you are using the latest Bash Shell [Upgrading Bash on MacOS](https://itnext.io/upgrading-bash-on-macos-7138bd1066ba)
-  * If you do not wish to install Bash, you may use (https://onlinegdb.com/Hksk2ESXw), though this is an external service and there is no guarantee it will remain working.
+  * If you do not wish to install Bash, you may use (https://onlinegdb.com/SkBpjBFOD), though this is an external service and there is no guarantee it will remain working.
 
 ## Usage
 1. Place `modelgen.sh` in the the location you would like to generate the custom model data files.
