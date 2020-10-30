@@ -59,6 +59,7 @@ then
 ENDOFFILE
   for i in $(seq 1 $entrynum)
   do
+     echo "        {\"predicate\": {\"custom_model_data\": $i},\"model\": \"$namespace:$filepath/${itemname}_${i}_0\"}," >> $itemname.json
      echo "        {\"predicate\": {\"custom_model_data\": $i, \"pulling\": 1, \"pull\": 0},\"model\": \"$namespace:$filepath/${itemname}_${i}_0\"}," >> $itemname.json
      echo "        {\"predicate\": {\"custom_model_data\": $i, \"pulling\": 1, \"pull\": 0.5},\"model\": \"$namespace:$filepath/${itemname}_${i}_1\"}," >> $itemname.json
      echo "        {\"predicate\": {\"custom_model_data\": $i, \"pulling\": 1, \"pull\": 1},\"model\": \"$namespace:$filepath/${itemname}_${i}_2\"}," >> $itemname.json
@@ -67,7 +68,7 @@ elif [ $itemname == 'crossbow' ]
 then
   cat > $itemname.json << ENDOFFILE
 {
-      "parent": "item/$namespace:$parent",
+      "parent": "$namespace:$parent",
       "textures": {
           "layer0": "item/crossbow_standby"
       },
@@ -94,14 +95,15 @@ then
           }
       },
       "overrides": [
-          {"predicate": {"pulling": 1}, "model": "item/crossbow_pulling_0"},
-          {"predicate": {"pulling": 1, "pull": 0.58}, "model": "item/crossbow_pulling_1"},
-          {"predicate": {"pulling": 1, "pull": 1.0}, "model": "item/crossbow_pulling_2"},
-          {"predicate": {"charged": 1}, "model": "item/crossbow_arrow"},
-          {"predicate": {"charged": 1, "firework": 1}, "model": "item/crossbow_firework"},
+        {"predicate": {"pulling": 1}, "model": "item/crossbow_pulling_0"},
+        {"predicate": {"pulling": 1, "pull": 0.58}, "model": "item/crossbow_pulling_1"},
+        {"predicate": {"pulling": 1, "pull": 1.0}, "model": "item/crossbow_pulling_2"},
+        {"predicate": {"charged": 1}, "model": "item/crossbow_arrow"},
+        {"predicate": {"charged": 1, "firework": 1}, "model": "item/crossbow_firework"},
 ENDOFFILE
   for i in $(seq 1 $entrynum)
   do
+     echo "        {\"predicate\": {\"custom_model_data\": $i},\"model\": \"$namespace:$filepath/${itemname}_${i}_0\"}," >> $itemname.json
      echo "        {\"predicate\": {\"custom_model_data\": $i, \"pulling\": 1, \"pull\": 0},\"model\": \"$namespace:$filepath/${itemname}_${i}_0\"}," >> $itemname.json
      echo "        {\"predicate\": {\"custom_model_data\": $i, \"pulling\": 1, \"pull\": 0.58},\"model\": \"$namespace:$filepath/${itemname}_${i}_1\"}," >> $itemname.json
      echo "        {\"predicate\": {\"custom_model_data\": $i, \"pulling\": 1, \"pull\": 1.0},\"model\": \"$namespace:$filepath/${itemname}_${i}_2\"}," >> $itemname.json
@@ -346,3 +348,4 @@ printf '%s\n' '$' 's/.$//' wq | ex $itemname.json
 echo " 	]" >> $itemname.json
 echo "}" >> $itemname.json
 printf "\e[32m$itemname.json has been successfully generated with $entrynum custom model data entries.\e[m\n"
+
